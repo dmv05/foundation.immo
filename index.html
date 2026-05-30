@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Team Foundation.immo — Conseil immobilier d'entreprise & patrimoine | eXp France</title>
+<meta name="description" content="Team Fondation, collectif de conseillers eXp France. Immobilier commercial, fonds de commerce, investissement et résidentiel. Expertise terrain des Hautes-Alpes, présence nationale." />
+<meta name="theme-color" content="#0d4f4a" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Team Foundation.immo — Conseil immobilier d'entreprise & patrimoine" />
+<meta property="og:description" content="Immobilier commercial, fonds de commerce, investissement. Expertise terrain, présence nationale. eXp France." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.foundation.immo" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Hanken+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#f5f1e8;
+  --cream-2:#efe9db;
+  --ink:#14201e;
+  --ink-soft:#384542;
+  --pine:#0d4f4a;
+  --pine-deep:#093b37;
+  --glacier:#7fb5ad;
+  --copper:#b07d3f;
+  --line:#d8d0bf;
+  --maxw:1180px;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Hanken Grotesk",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---------- TOPO / DECOR ---------- */
+.topo{position:absolute;inset:0;pointer-events:none;opacity:.5;z-index:0}
+
+/* ---------- NAV ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s,padding .4s}
+header.scrolled{background:rgba(245,241,232,.86);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;max-width:var(--maxw);margin:0 auto;transition:padding .4s}
+header.scrolled .nav{padding:14px 28px}
+.brand{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-weight:500;font-size:1.35rem;letter-spacing:.02em}
+.brand b{color:var(--pine);font-weight:600}
+.brand .dom{color:var(--copper);font-weight:600}
+.brand .exp{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);transform:translateY(-2px)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.86rem;letter-spacing:.04em;color:var(--ink-soft);position:relative;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--pine);transition:width .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:10px 20px;border:1.5px solid var(--ink);border-radius:2px;font-size:.82rem;letter-spacing:.05em;transition:all .3s}
+.nav-cta:hover{background:var(--ink);color:var(--cream)}
+.nav-cta::after{display:none}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);overflow:hidden}
+.hero .ridge{position:absolute;bottom:0;left:0;right:0;z-index:1;opacity:.9}
+.hero-inner{position:relative;z-index:3;padding-top:90px;padding-bottom:120px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pine);margin-bottom:30px;font-weight:600}
+.eyebrow::before{content:"";width:38px;height:1px;background:var(--copper)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.4vw,5.4rem);line-height:1.02;letter-spacing:-.015em;max-width:16ch}
+.hero h1 em{font-style:italic;color:var(--pine)}
+.hero .lede{font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--ink-soft);max-width:46ch;margin-top:30px;font-weight:400}
+.hero-actions{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:2px;font-size:.92rem;letter-spacing:.03em;font-weight:500;transition:all .3s;cursor:pointer;border:1.5px solid transparent}
+.btn-primary{background:var(--pine);color:var(--cream)}
+.btn-primary:hover{background:var(--pine-deep);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--cream)}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* staggered reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.hero .reveal:nth-child(1){transition-delay:.05s}
+.hero .reveal:nth-child(2){transition-delay:.18s}
+.hero .reveal:nth-child(3){transition-delay:.32s}
+.hero .reveal:nth-child(4){transition-delay:.46s}
+
+/* ---------- STATS ---------- */
+.stats{background:var(--ink);color:var(--cream)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:54px 28px;border-right:1px solid rgba(245,241,232,.12);text-align:center}
+.stat:last-child{border-right:none}
+.stat .num{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;color:var(--cream);line-height:1}
+.stat .num span{color:var(--glacier)}
+.stat .lbl{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-top:12px}
+
+/* ---------- SECTION SHELL ---------- */
+section{position:relative}
+.sec-head{max-width:62ch}
+.sec-tag{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--copper);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.sec-tag::before{content:"";width:30px;height:1px;background:var(--copper)}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.08;letter-spacing:-.01em}
+.sec-head h2 em{font-style:italic;color:var(--pine)}
+.sec-head p{color:var(--ink-soft);font-size:1.08rem;margin-top:22px}
+
+/* ---------- EXPERTISE ---------- */
+.expertise{padding:120px 0}
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:70px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.exp-card{padding:46px 42px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .4s;position:relative}
+.exp-card:hover{background:var(--cream-2)}
+.exp-card .idx{font-family:var(--serif);font-size:.95rem;color:var(--copper);letter-spacing:.1em}
+.exp-card h3{font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:18px 0 14px;letter-spacing:-.01em}
+.exp-card p{color:var(--ink-soft);font-size:.98rem}
+.exp-card .tags{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
+.exp-card .tags span{font-size:.74rem;letter-spacing:.04em;color:var(--pine);border:1px solid var(--line);padding:5px 12px;border-radius:30px}
+
+/* ---------- TERRITOIRE ---------- */
+.territory{background:var(--pine-deep);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
+.territory .topo{opacity:.14}
+.terr-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;position:relative;z-index:2}
+.territory .sec-tag{color:var(--glacier)}
+.territory .sec-tag::before{background:var(--glacier)}
+.territory h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1.1}
+.territory h2 em{font-style:italic;color:var(--glacier)}
+.territory p{color:rgba(245,241,232,.78);font-size:1.06rem;margin-top:24px}
+.terr-list{margin-top:34px;display:grid;gap:2px}
+.terr-list .row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(245,241,232,.14)}
+.terr-list .row .k{font-family:var(--serif);font-size:1.15rem}
+.terr-list .row .v{color:var(--glacier);font-size:.86rem;letter-spacing:.06em;text-transform:uppercase}
+.terr-card{background:rgba(245,241,232,.05);border:1px solid rgba(245,241,232,.16);border-radius:4px;padding:42px}
+.terr-card .big{font-family:var(--serif);font-size:clamp(3rem,7vw,4.4rem);line-height:1;color:var(--cream)}
+.terr-card .cap{color:rgba(245,241,232,.7);margin-top:12px;font-size:.95rem}
+.terr-card hr{border:none;border-top:1px solid rgba(245,241,232,.14);margin:30px 0}
+.terr-card .mini{display:flex;justify-content:space-between;margin:14px 0;font-size:.92rem}
+.terr-card .mini span:last-child{color:var(--glacier)}
+
+/* ---------- JOIN ---------- */
+.join{padding:130px 0}
+.join-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+.join-points{display:grid;gap:0;border-top:1px solid var(--line)}
+.jp{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:32px 0;border-bottom:1px solid var(--line)}
+.jp .n{font-family:var(--serif);font-size:2rem;color:var(--copper);line-height:1}
+.jp h4{font-size:1.18rem;font-weight:600;letter-spacing:-.01em}
+.jp p{color:var(--ink-soft);margin-top:8px;font-size:.98rem}
+.join-aside{background:var(--ink);color:var(--cream);border-radius:4px;padding:48px;position:sticky;top:110px}
+.join-aside h3{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.15}
+.join-aside h3 em{font-style:italic;color:var(--glacier)}
+.join-aside p{color:rgba(245,241,232,.75);margin-top:18px;font-size:.98rem}
+.join-aside .btn{margin-top:30px;width:100%;justify-content:center;background:var(--cream);color:var(--ink)}
+.join-aside .btn:hover{background:var(--glacier);color:var(--ink)}
+.join-aside .micro{margin-top:18px;font-size:.8rem;color:rgba(245,241,232,.5);text-align:center}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--cream-2);padding:120px 0;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.05}
+.contact h2 em{font-style:italic;color:var(--pine)}
+.contact .lede{color:var(--ink-soft);font-size:1.1rem;margin-top:24px;max-width:42ch}
+.contact-card{background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:46px}
+.cc-row{padding:20px 0;border-bottom:1px solid var(--line)}
+.cc-row:last-child{border-bottom:none;padding-bottom:0}
+.cc-row .k{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);font-weight:600}
+.cc-row .v{font-family:var(--serif);font-size:1.25rem;margin-top:6px}
+.cc-row .v a{transition:color .25s}
+.cc-row .v a:hover{color:var(--pine)}
+.cc-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:rgba(245,241,232,.65);padding:70px 0 40px}
+.foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;padding-bottom:40px;border-bottom:1px solid rgba(245,241,232,.12)}
+.foot-brand{font-family:var(--serif);font-size:1.6rem;color:var(--cream)}
+.foot-brand .dom{color:var(--copper)}
+.foot-brand .exp{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,241,232,.5);margin-top:6px}
+.foot-links{display:flex;gap:40px;flex-wrap:wrap}
+.foot-col h5{color:var(--cream);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.foot-col a{display:block;font-size:.9rem;margin-bottom:8px;color:rgba(245,241,232,.65);transition:color .25s}
+.foot-col a:hover{color:var(--glacier)}
+.legal{font-size:.76rem;line-height:1.8;color:rgba(245,241,232,.42);margin-top:30px;max-width:90ch}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:920px){
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--ink);flex-direction:column;align-items:flex-start;justify-content:center;padding:60px 40px;gap:26px;transform:translateX(100%);transition:transform .4s;z-index:60}
+  .nav-links.open{transform:none}
+  .nav-links a{color:var(--cream);font-size:1.05rem}
+  .nav-cta{border-color:var(--cream);color:var(--cream)}
+  .burger{display:flex;z-index:70}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(245,241,232,.12)}
+  .exp-grid{grid-template-columns:1fr}
+  .terr-grid,.join-grid,.contact-grid{grid-template-columns:1fr;gap:50px}
+  .join-aside{position:static}
+}
+@media(max-width:560px){
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:none!important;border-bottom:1px solid rgba(245,241,232,.12)}
+  .exp-card,.join-aside,.terr-card,.contact-card{padding:32px 26px}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <nav class="nav">
+    <a href="#top" class="brand"><b>Team&nbsp;Foundation<span class="dom">.immo</span></b><span class="exp">eXp France</span></a>
+    <div class="nav-links" id="navlinks">
+      <a href="#expertise">Expertise</a>
+      <a href="#territoire">Territoire</a>
+      <a href="#rejoindre">Rejoindre la team</a>
+      <a href="#contact" class="nav-cta">Nous contacter</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <!-- topographic decoration -->
+  <svg class="topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#0d4f4a" stroke-width="1" opacity="0.16">
+      <path d="M-50 700 Q 300 560 620 640 T 1500 560"/>
+      <path d="M-50 760 Q 320 600 640 690 T 1500 600"/>
+      <path d="M-50 640 Q 280 520 600 590 T 1500 510"/>
+      <path d="M-50 820 Q 340 660 660 740 T 1500 650"/>
+      <path d="M-50 580 Q 260 480 580 540 T 1500 470"/>
+    </g>
+  </svg>
+  <!-- mountain ridge — ascending growth chart -->
+  <svg class="ridge" viewBox="0 0 1440 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" height="250" width="100%">
+    <defs>
+      <linearGradient id="rfillBack" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0d4f4a" stop-opacity="0.16"/>
+        <stop offset="1" stop-color="#0d4f4a" stop-opacity="0.02"/>
+      </linearGradient>
+      <linearGradient id="rfillFront" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0d4f4a" stop-opacity="0.30"/>
+        <stop offset="1" stop-color="#0d4f4a" stop-opacity="0.06"/>
+      </linearGradient>
+    </defs>
+    <!-- back range, ascending -->
+    <path d="M0 280 L0 248 L160 210 L320 226 L500 176 L700 194 L900 138 L1120 156 L1320 92 L1440 64 L1440 280 Z" fill="url(#rfillBack)"/>
+    <!-- front range, sharper, ascending -->
+    <path d="M0 280 L0 262 L70 250 L250 228 L460 198 L690 162 L920 124 L1180 82 L1400 44 L1440 38 L1440 280 Z" fill="url(#rfillFront)"/>
+    <!-- progression crest line (cuivre), constant thickness -->
+    <polyline points="70,250 250,228 460,198 690,162 920,124 1180,82 1400,44"
+      fill="none" stroke="#b07d3f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+      vector-effect="non-scaling-stroke" opacity="0.95"/>
+    <!-- data nodes (diamonds, robustes à l'étirement) -->
+    <g fill="#0d4f4a">
+      <rect x="-5" y="-5" width="10" height="10" transform="translate(250,228) rotate(45)"/>
+      <rect x="-5" y="-5" width="10" height="10" transform="translate(460,198) rotate(45)"/>
+      <rect x="-5" y="-5" width="10" height="10" transform="translate(690,162) rotate(45)"/>
+      <rect x="-5" y="-5" width="10" height="10" transform="translate(920,124) rotate(45)"/>
+      <rect x="-5" y="-5" width="10" height="10" transform="translate(1180,82) rotate(45)"/>
+    </g>
+    <!-- apex (sommet, accent cuivre) -->
+    <rect x="-7" y="-7" width="14" height="14" transform="translate(1400,44) rotate(45)" fill="#b07d3f"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Conseil immobilier d'entreprise & patrimoine</span>
+    <h1 class="reveal">Bâtir votre patrimoine sur des <em>fondations</em> solides.</h1>
+    <p class="lede reveal">Team Fondation accompagne propriétaires, investisseurs et repreneurs dans la vente et l'acquisition de biens commerciaux, de fonds de commerce et de résidentiel. Une expertise née sur le terrain des Hautes-Alpes, déployée dans toute la France.</p>
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn btn-primary">Discuter de votre projet <span class="arr">→</span></a>
+      <a href="#rejoindre" class="btn btn-ghost">Rejoindre la team</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="stat reveal"><div class="num"><span>10</span>+</div><div class="lbl">Conseillers en France</div></div>
+    <div class="stat reveal"><div class="num">eXp</div><div class="lbl">1ᵉʳ réseau mondial</div></div>
+    <div class="stat reveal"><div class="num">100<span>%</span></div><div class="lbl">Commercial & patrimoine</div></div>
+    <div class="stat reveal"><div class="num">05</div><div class="lbl">Ancrage Hautes-Alpes</div></div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Nos domaines</div>
+      <h2>Une lecture <em>fine</em> de chaque actif, du local de centre-ville au montage patrimonial.</h2>
+      <p>Nous ne vendons pas des mètres carrés. Nous évaluons un emplacement, un bail, un chiffre d'affaires, une rentabilité — et nous structurons l'opération qui sert vraiment vos intérêts.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="idx">01 —</div>
+        <h3>Immobilier commercial</h3>
+        <p>Murs commerciaux, locaux d'activité, bureaux et boutiques. Analyse d'emplacement, de bail et de rendement pour acheter ou céder au juste prix.</p>
+        <div class="tags"><span>Murs</span><span>Locaux d'activité</span><span>Bureaux</span></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="idx">02 —</div>
+        <h3>Fonds de commerce</h3>
+        <p>Cession et acquisition de fonds : restaurants, hôtellerie, commerces, services. Avis de valeur étayés par les transactions réelles et les comptes.</p>
+        <div class="tags"><span>Restauration</span><span>Hôtellerie</span><span>Cession</span></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="idx">03 —</div>
+        <h3>Investissement & patrimoine</h3>
+        <p>Immeubles de rapport, montages SCI / Holding, optimisation de la structure de détention. Construire un patrimoine qui dure et se transmet.</p>
+        <div class="tags"><span>Immeubles</span><span>SCI / Holding</span><span>Rendement</span></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="idx">04 —</div>
+        <h3>Résidentiel d'exception</h3>
+        <p>Maisons, appartements et biens de caractère, en station comme en vallée. Un accompagnement haut de gamme, de l'estimation à la signature.</p>
+        <div class="tags"><span>Maisons</span><span>Appartements</span><span>Stations</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERRITOIRE -->
+<section class="territory" id="territoire">
+  <svg class="topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#7fb5ad" stroke-width="1">
+      <path d="M-50 300 Q 360 180 700 260 T 1500 200"/>
+      <path d="M-50 380 Q 340 240 680 330 T 1500 270"/>
+      <path d="M-50 220 Q 320 120 660 200 T 1500 140"/>
+      <path d="M-50 460 Q 380 300 720 400 T 1500 340"/>
+    </g>
+  </svg>
+  <div class="wrap terr-grid">
+    <div class="reveal">
+      <div class="sec-tag">Notre terrain</div>
+      <h2>Des Hautes-Alpes à la France entière, <em>la même exigence.</em></h2>
+      <p>Notre force, c'est la connaissance intime d'un territoire d'altitude — Briançon, Serre-Chevalier, le Guillestrois, l'Embrunais — où chaque emplacement, chaque saison, chaque flux de clientèle compte. Cette rigueur de terrain, nos conseillers la portent partout en France.</p>
+      <div class="terr-list">
+        <div class="row"><span class="k">Serre-Chevalier · Briançon</span><span class="v">Cœur de territoire</span></div>
+        <div class="row"><span class="k">Guillestrois · Embrunais</span><span class="v">Commercial & tourisme</span></div>
+        <div class="row"><span class="k">Réseau national</span><span class="v">Team Fondation</span></div>
+      </div>
+    </div>
+    <div class="terr-card reveal">
+      <div class="big">eXp</div>
+      <div class="cap">Le premier réseau immobilier mondial : technologie, formation continue et puissance d'un collectif présent dans plus de 25 pays.</div>
+      <hr>
+      <div class="mini"><span>Modèle</span><span>100 % conseiller</span></div>
+      <div class="mini"><span>Couverture</span><span>France entière</span></div>
+      <div class="mini"><span>Spécialité team</span><span>Entreprise & patrimoine</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REJOINDRE -->
+<section class="join" id="rejoindre">
+  <div class="wrap join-grid">
+    <div class="reveal">
+      <div class="sec-tag">Rejoindre la team</div>
+      <div class="sec-head" style="max-width:none">
+        <h2>Développez votre activité, <em>jamais seul.</em></h2>
+        <p>Team Fondation, c'est un collectif de conseillers indépendants qui partagent outils, méthodes et opportunités. Vous gardez votre liberté ; vous gagnez un cadre, un mentorat et une vraie puissance de frappe.</p>
+      </div>
+      <div class="join-points">
+        <div class="jp"><div class="n">01</div><div><h4>Accompagnement & mentorat</h4><p>Montée en compétence sur le commercial, les fonds de commerce et le montage patrimonial — les niches les plus rémunératrices.</p></div></div>
+        <div class="jp"><div class="n">02</div><div><h4>Outils sur-mesure</h4><p>CRM dédié, dossiers de cession automatisés, qualification des leads. Vous vendez, la technologie travaille pour vous.</p></div></div>
+        <div class="jp"><div class="n">03</div><div><h4>Rémunération attractive</h4><p>Le modèle eXp : commissions élevées, revenu partagé et participation au capital. Vous construisez aussi votre propre patrimoine.</p></div></div>
+        <div class="jp"><div class="n">04</div><div><h4>Liberté totale</h4><p>Vous restez indépendant, où que vous soyez en France. La team apporte la structure, pas la contrainte.</p></div></div>
+      </div>
+    </div>
+    <aside class="join-aside reveal">
+      <h3>Et si votre prochaine étape était <em>la bonne équipe&nbsp;?</em></h3>
+      <p>Conseiller confirmé ou en reconversion, parlons de votre projet en toute confidentialité. Un échange, sans engagement.</p>
+      <a href="#contact" class="btn">Candidater à la team <span class="arr">→</span></a>
+      <div class="micro">Réponse sous 48 h · Échange confidentiel</div>
+    </aside>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="sec-tag">Parlons-en</div>
+      <h2>Votre projet mérite un <em>vrai</em> conseil.</h2>
+      <p class="lede">Vente, acquisition, estimation, ou envie de rejoindre la team — écrivez-nous ou appelez. Nous revenons vers vous rapidement.</p>
+    </div>
+    <div class="contact-card reveal">
+      <div class="cc-row">
+        <div class="k">Email</div>
+        <div class="v"><a href="mailto:didier.moranvalvincent@expfrance.fr">didier.moranvalvincent@expfrance.fr</a></div>
+      </div>
+      <div class="cc-row">
+        <div class="k">Téléphone</div>
+        <div class="v"><a href="tel:+33613215993">+33 6 13 21 59 93</a></div>
+      </div>
+      <div class="cc-row">
+        <div class="k">Territoire</div>
+        <div class="v">Hautes-Alpes · France entière</div>
+      </div>
+      <div class="cc-actions">
+        <a href="mailto:didier.moranvalvincent@expfrance.fr" class="btn btn-primary">Écrire un message <span class="arr">→</span></a>
+        <a href="#rejoindre" class="btn btn-ghost">Rejoindre la team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">Team Foundation<span class="dom">.immo</span><span class="exp">eXp France</span></div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Expertise</h5>
+          <a href="#expertise">Immobilier commercial</a>
+          <a href="#expertise">Fonds de commerce</a>
+          <a href="#expertise">Investissement</a>
+          <a href="#expertise">Résidentiel</a>
+        </div>
+        <div class="foot-col">
+          <h5>La team</h5>
+          <a href="#territoire">Notre territoire</a>
+          <a href="#rejoindre">Rejoindre</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      © <span id="yr"></span> Team Fondation — eXp Global France SAS · RCS Montpellier 890 710 700 · Carte professionnelle CPI 3402 2020 000 045 086 · RCP AXA. Chaque conseiller exerce en qualité d'agent commercial indépendant. Les informations de ce site sont fournies à titre indicatif et ne constituent pas une offre contractuelle.
+    </div>
+  </div>
+</footer>
+
+<script>
+// year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// sticky header
+const hdr = document.getElementById('hdr');
+const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 40);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+// burger
+const burger = document.getElementById('burger');
+const links = document.getElementById('navlinks');
+burger.addEventListener('click', () => links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
