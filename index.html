@@ -17,7 +17,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Hanken+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -31,8 +31,8 @@
   --copper:#b07d3f;
   --line:#d8d0bf;
   --maxw:1180px;
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Hanken Grotesk",system-ui,sans-serif;
+  --serif:"Manrope",system-ui,sans-serif;   /* TITRES — Manrope */
+  --sans:"Roboto",system-ui,sans-serif;      /* CORPS — Roboto */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -56,7 +56,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,
 header.scrolled{background:rgba(245,241,232,.86);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;max-width:var(--maxw);margin:0 auto;transition:padding .4s}
 header.scrolled .nav{padding:14px 28px}
-.brand{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-weight:500;font-size:1.35rem;letter-spacing:.02em}
+.brand{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-weight:800;font-size:1.3rem;letter-spacing:-.01em}
 .brand b{color:var(--pine);font-weight:600}
 .brand .dom{color:var(--copper);font-weight:600}
 .brand .exp{font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);transform:translateY(-2px)}
@@ -77,9 +77,9 @@ header.scrolled .nav{padding:14px 28px}
 .hero-inner{position:relative;z-index:3;padding-top:90px;padding-bottom:120px}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pine);margin-bottom:30px;font-weight:600}
 .eyebrow::before{content:"";width:38px;height:1px;background:var(--copper)}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.4vw,5.4rem);line-height:1.02;letter-spacing:-.015em;max-width:16ch}
-.hero h1 em{font-style:italic;color:var(--pine)}
-.hero .lede{font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--ink-soft);max-width:46ch;margin-top:30px;font-weight:400}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6.4vw,5.4rem);line-height:1.04;letter-spacing:-.02em;max-width:16ch}
+.hero h1 em{font-style:normal;font-weight:800;color:var(--pine)}
+.hero .lede{font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--ink-soft);max-width:46ch;margin-top:30px;font-weight:300}
 .dom-soft{color:var(--copper);font-weight:500}
 .hero-actions{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:2px;font-size:.92rem;letter-spacing:.03em;font-weight:500;transition:all .3s;cursor:pointer;border:1.5px solid transparent}
@@ -103,7 +103,7 @@ header.scrolled .nav{padding:14px 28px}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);}
 .stat{padding:54px 28px;border-right:1px solid rgba(245,241,232,.12);text-align:center}
 .stat:last-child{border-right:none}
-.stat .num{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;color:var(--cream);line-height:1}
+.stat .num{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;color:var(--cream);line-height:1;letter-spacing:-.01em}
 .stat .num span{color:var(--glacier)}
 .stat .lbl{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-top:12px}
 
@@ -112,8 +112,8 @@ section{position:relative}
 .sec-head{max-width:62ch}
 .sec-tag{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--copper);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:22px}
 .sec-tag::before{content:"";width:30px;height:1px;background:var(--copper)}
-.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.08;letter-spacing:-.01em}
-.sec-head h2 em{font-style:italic;color:var(--pine)}
+.sec-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.12;letter-spacing:-.02em}
+.sec-head h2 em{font-style:normal;font-weight:800;color:var(--pine)}
 .sec-head p{color:var(--ink-soft);font-size:1.08rem;margin-top:22px}
 
 /* ---------- EXPERTISE ---------- */
@@ -121,8 +121,8 @@ section{position:relative}
 .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:70px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .exp-card{padding:46px 42px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .4s;position:relative}
 .exp-card:hover{background:var(--cream-2)}
-.exp-card .idx{font-family:var(--serif);font-size:.95rem;color:var(--copper);letter-spacing:.1em}
-.exp-card h3{font-family:var(--serif);font-weight:500;font-size:1.55rem;margin:18px 0 14px;letter-spacing:-.01em}
+.exp-card .idx{font-family:var(--serif);font-weight:800;font-size:.9rem;color:var(--copper);letter-spacing:.06em}
+.exp-card h3{font-family:var(--serif);font-weight:800;font-size:1.45rem;margin:18px 0 14px;letter-spacing:-.01em}
 .exp-card p{color:var(--ink-soft);font-size:.98rem}
 .exp-card .tags{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
 .exp-card .tags span{font-size:.74rem;letter-spacing:.04em;color:var(--pine);border:1px solid var(--line);padding:5px 12px;border-radius:30px}
@@ -133,31 +133,37 @@ section{position:relative}
 .terr-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;position:relative;z-index:2}
 .territory .sec-tag{color:var(--glacier)}
 .territory .sec-tag::before{background:var(--glacier)}
-.territory h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1.1}
-.territory h2 em{font-style:italic;color:var(--glacier)}
+.territory h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4vw,3rem);line-height:1.14;letter-spacing:-.02em}
+.territory h2 em{font-style:normal;font-weight:800;color:var(--glacier)}
 .territory p{color:rgba(245,241,232,.78);font-size:1.06rem;margin-top:24px}
 .terr-list{margin-top:34px;display:grid;gap:2px}
 .terr-list .row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(245,241,232,.14)}
-.terr-list .row .k{font-family:var(--serif);font-size:1.15rem}
+.terr-list .row .k{font-family:var(--serif);font-weight:700;font-size:1.1rem}
 .terr-list .row .v{color:var(--glacier);font-size:.86rem;letter-spacing:.06em;text-transform:uppercase}
 .terr-card{background:rgba(245,241,232,.05);border:1px solid rgba(245,241,232,.16);border-radius:4px;padding:42px}
-.terr-card .big{font-family:var(--serif);font-size:clamp(3rem,7vw,4.4rem);line-height:1;color:var(--cream)}
+.terr-card .big{font-family:var(--serif);font-weight:800;font-size:clamp(3rem,7vw,4.4rem);line-height:1;color:var(--cream);letter-spacing:-.02em}
 .terr-card .cap{color:rgba(245,241,232,.7);margin-top:12px;font-size:.95rem}
 .terr-card hr{border:none;border-top:1px solid rgba(245,241,232,.14);margin:30px 0}
 .terr-card .mini{display:flex;justify-content:space-between;margin:14px 0;font-size:.92rem}
 .terr-card .mini span:last-child{color:var(--glacier)}
+.terr-card-head{display:flex;align-items:center;gap:18px}
+.terr-card-head .big{font-size:clamp(2.6rem,6vw,3.6rem)}
+.terr-card-head .cap{margin-top:0;color:rgba(245,241,232,.72);font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
+.regions{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.regions span{font-size:.8rem;letter-spacing:.01em;color:var(--cream);background:rgba(245,241,232,.06);border:1px solid rgba(245,241,232,.16);padding:7px 13px;border-radius:30px;transition:background .25s,border-color .25s}
+.regions span:hover{background:rgba(127,181,173,.14);border-color:var(--glacier)}
 
 /* ---------- JOIN ---------- */
 .join{padding:130px 0}
 .join-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
 .join-points{display:grid;gap:0;border-top:1px solid var(--line)}
 .jp{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:32px 0;border-bottom:1px solid var(--line)}
-.jp .n{font-family:var(--serif);font-size:2rem;color:var(--copper);line-height:1}
-.jp h4{font-size:1.18rem;font-weight:600;letter-spacing:-.01em}
+.jp .n{font-family:var(--serif);font-weight:800;font-size:2rem;color:var(--copper);line-height:1}
+.jp h4{font-family:var(--serif);font-size:1.18rem;font-weight:800;letter-spacing:-.01em}
 .jp p{color:var(--ink-soft);margin-top:8px;font-size:.98rem}
 .join-aside{background:var(--ink);color:var(--cream);border-radius:4px;padding:48px;position:sticky;top:110px}
-.join-aside h3{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.15}
-.join-aside h3 em{font-style:italic;color:var(--glacier)}
+.join-aside h3{font-family:var(--serif);font-weight:300;font-size:1.9rem;line-height:1.2;letter-spacing:-.01em}
+.join-aside h3 em{font-style:normal;font-weight:800;color:var(--glacier)}
 .join-aside p{color:rgba(245,241,232,.75);margin-top:18px;font-size:.98rem}
 .join-aside .btn{margin-top:30px;width:100%;justify-content:center;background:var(--cream);color:var(--ink)}
 .join-aside .btn:hover{background:var(--glacier);color:var(--ink)}
@@ -166,14 +172,14 @@ section{position:relative}
 /* ---------- CONTACT ---------- */
 .contact{background:var(--cream-2);padding:120px 0;border-top:1px solid var(--line)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.05}
-.contact h2 em{font-style:italic;color:var(--pine)}
+.contact h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.1;letter-spacing:-.02em}
+.contact h2 em{font-style:normal;font-weight:800;color:var(--pine)}
 .contact .lede{color:var(--ink-soft);font-size:1.1rem;margin-top:24px;max-width:42ch}
 .contact-card{background:var(--cream);border:1px solid var(--line);border-radius:4px;padding:46px}
 .cc-row{padding:20px 0;border-bottom:1px solid var(--line)}
 .cc-row:last-child{border-bottom:none;padding-bottom:0}
 .cc-row .k{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);font-weight:600}
-.cc-row .v{font-family:var(--serif);font-size:1.25rem;margin-top:6px}
+.cc-row .v{font-family:var(--sans);font-weight:500;font-size:1.18rem;margin-top:6px}
 .cc-row .v a{transition:color .25s}
 .cc-row .v a:hover{color:var(--pine)}
 .cc-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
@@ -185,7 +191,7 @@ footer{background:var(--ink);color:rgba(245,241,232,.65);padding:70px 0 40px}
 .foot-brand .dom{color:var(--copper)}
 .foot-brand .exp{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,241,232,.5);margin-top:6px}
 .foot-links{display:flex;gap:40px;flex-wrap:wrap}
-.foot-col h5{color:var(--cream);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.foot-col h5{font-family:var(--serif);font-weight:700;color:var(--cream);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
 .foot-col a{display:block;font-size:.9rem;margin-bottom:8px;color:rgba(245,241,232,.65);transition:color .25s}
 .foot-col a:hover{color:var(--glacier)}
 .legal{font-size:.76rem;line-height:1.8;color:rgba(245,241,232,.42);margin-top:30px;max-width:90ch}
@@ -292,10 +298,10 @@ footer{background:var(--ink);color:rgba(245,241,232,.65);padding:70px 0 40px}
 <!-- STATS -->
 <section class="stats">
   <div class="stats-grid">
-    <div class="stat reveal"><div class="num"><span>10</span>+</div><div class="lbl">Conseillers en France</div></div>
+    <div class="stat reveal"><div class="num">5<span>+</span></div><div class="lbl">Conseillers par région</div></div>
+    <div class="stat reveal"><div class="num">13</div><div class="lbl">Régions de France</div></div>
     <div class="stat reveal"><div class="num">eXp</div><div class="lbl">1ᵉʳ réseau mondial</div></div>
     <div class="stat reveal"><div class="num">100<span>%</span></div><div class="lbl">Commercial & patrimoine</div></div>
-    <div class="stat reveal"><div class="num">05</div><div class="lbl">Ancrage Hautes-Alpes<br>Développement National</div></div>
   </div>
 </section>
 
@@ -348,22 +354,36 @@ footer{background:var(--ink);color:rgba(245,241,232,.65);padding:70px 0 40px}
   </svg>
   <div class="wrap terr-grid">
     <div class="reveal">
-      <div class="sec-tag">Notre terrain</div>
-      <h2>Des Hautes-Alpes à la France entière, <em>la même exigence.</em></h2>
-      <p>Notre force, c'est la connaissance intime d'un territoire d'altitude — Briançon, Serre-Chevalier, le Guillestrois, l'Embrunais — où chaque emplacement, chaque saison, chaque flux de clientèle compte. Cette rigueur de terrain, nos conseillers la portent partout en France.</p>
+      <div class="sec-tag">Présence nationale</div>
+      <h2>Née dans les Hautes-Alpes, <em>déployée partout en France.</em></h2>
+      <p>Team foundation.immo est un réseau de conseillers locaux : où que vous soyez, vous traitez avec un expert qui connaît votre marché — épaulé par la force d'un collectif national et la puissance d'eXp. Notre maillage vise au minimum cinq conseillers par région, pour une vraie proximité sur tout le territoire.</p>
       <div class="terr-list">
-        <div class="row"><span class="k">Serre-Chevalier · Briançon</span><span class="v">Cœur de territoire</span></div>
-        <div class="row"><span class="k">Guillestrois · Embrunais</span><span class="v">Commercial & tourisme</span></div>
-        <div class="row"><span class="k">Réseau national</span><span class="v">Team foundation.immo</span></div>
+        <div class="row"><span class="k">Couverture</span><span class="v">13 régions</span></div>
+        <div class="row"><span class="k">Maillage local</span><span class="v">5+ conseillers / région</span></div>
+        <div class="row"><span class="k">Force collective</span><span class="v">Team foundation.immo</span></div>
       </div>
     </div>
     <div class="terr-card reveal">
-      <div class="big">eXp</div>
-      <div class="cap">Le premier réseau immobilier mondial : technologie, formation continue et puissance d'un collectif présent dans plus de 25 pays.</div>
+      <div class="terr-card-head">
+        <span class="big">5+</span>
+        <span class="cap">conseillers minimum<br>par région</span>
+      </div>
       <hr>
-      <div class="mini"><span>Modèle</span><span>100 % conseiller</span></div>
-      <div class="mini"><span>Couverture</span><span>France entière</span></div>
-      <div class="mini"><span>Spécialité team</span><span>Entreprise & patrimoine</span></div>
+      <div class="regions">
+        <span>Île-de-France</span>
+        <span>Auvergne-Rhône-Alpes</span>
+        <span>Provence-Alpes-Côte d'Azur</span>
+        <span>Occitanie</span>
+        <span>Nouvelle-Aquitaine</span>
+        <span>Hauts-de-France</span>
+        <span>Grand Est</span>
+        <span>Pays de la Loire</span>
+        <span>Bretagne</span>
+        <span>Normandie</span>
+        <span>Bourgogne-Franche-Comté</span>
+        <span>Centre-Val de Loire</span>
+        <span>Corse</span>
+      </div>
     </div>
   </div>
 </section>
